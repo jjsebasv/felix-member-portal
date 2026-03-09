@@ -1,0 +1,299 @@
+
+
+===== PAGE 1 =====
+
+ 
+The  Challenge  
+There  is  no  unified  internal  tool  today.  Each  operations  team—Customer  Support,  Credit  Ops,  
+Fraud
+ 
+Ops,
+ 
+and
+ 
+Compliance—works
+ 
+in
+ 
+its
+ 
+own
+ 
+separate
+ 
+dashboard
+ 
+or
+ 
+platform,
+ 
+built
+ 
+or
+ 
+adopted
+ 
+independently
+ 
+to
+ 
+serve
+ 
+that
+ 
+team’s
+ 
+specific
+ 
+needs.
+ 
+There
+ 
+is
+ 
+no
+ 
+shared
+ 
+customer
+ 
+profile,
+ 
+no
+ 
+cross-team
+ 
+visibility,
+ 
+and
+ 
+no
+ 
+common
+ 
+audit
+ 
+trail.
+ 
+ 
+Several
+ 
+teams
+ 
+also
+ 
+rely
+ 
+on
+ 
+external
+ 
+vendor
+ 
+platforms
+ 
+that
+ 
+are
+ 
+completely
+ 
+disconnected
+ 
+from
+ 
+each
+ 
+other.
+ 
+Teams
+ 
+context-switch
+ 
+between
+ 
+platforms,
+ 
+manually
+ 
+copy
+ 
+information,
+ 
+and
+ 
+maintain
+ 
+separate
+ 
+workflows
+ 
+in
+ 
+each.
+ 
+The  company  is  targeting  10×  transaction  growth  over  the  next  18  months  while  simultaneously  
+expanding
+ 
+its
+ 
+product
+ 
+portfolio.
+ 
+The
+ 
+new
+ 
+products
+ 
+include
+ 
+Wallets
+ 
+and
+ 
+expansion
+ 
+of
+ 
+Credits
+ 
+Deliverable  
+ 5  -  7  Slide  Presentation   
+Task  
+Given  these  goals  and  constraints,  propose  how  Felix  Pago  should  evolve  its  internal  tooling  
+strategy
+ 
+to
+ 
+support
+ 
+the
+ 
+next
+ 
+phase
+ 
+of
+ 
+growth.
+ 
+Your
+ 
+presentation
+ 
+should
+ 
+address
+ 
+Strategic  Context  &  Goals  
+●  Agent  output  must  scale  with  10x  transaction  growth  without  linearly  scaling  headcount  ●  Support  multi-product  expansion  (wallet,  credit)  without  building  separate  ops  stacks  per  
+product
+ ●  Reduce  cross-team  context-switching  and  manual  information  transfer  that  currently  
+slows
+ 
+resolution
+ 
+times
+ ●  Maintain  compliance  and  audit  readiness  as  regulatory  complexity  grows  
+ 
+ 
+ 
+ 
+Product  Vision  &  Architecture  
+
+
+===== PAGE 2 =====
+
+ ●  What  is  the  core  product  concept?  (e.g.,  unified  CRM,  case  management  system,  
+workflow
+ 
+engine—or
+ 
+something
+ 
+else?)
+ 
+ ●  What  are  the  key  modules  or  views,  and  how  do  they  serve  each  team’s  needs?  ●  How  do  you  handle  the  tension  between  unified  data  and  team-specific  workflows?  ●  How  does  the  system  accommodate  new  products  (wallets,  credit)  without  a  full  
+redesign?
+ ●  Where  do  external  vendor  platforms  (KYC  Vendor,  Risk  vendor,  payment  processor  
+platform)
+ 
+fit?
+ 
+ ●  How  would  you  think  about  the  data  layer  if  wallet  balances,  loan  states,  and  remittance  
+history
+ 
+all
+ 
+need
+ 
+to
+ 
+be
+ 
+queryable
+ 
+from
+ 
+a
+ 
+single
+ 
+customer
+ 
+profile
+ 
+Stakeholder  Prioritization  
+●  Given  stakeholder  teams  (CX,  Fraud,  Compliance,  Credit,)  which  team’s  workflows  do  
+you
+ 
+build
+ 
+for
+ 
+first,
+ 
+and
+ 
+why?
+ ●  How  do  you  gather  and  prioritize  requirements  from  competing  stakeholders?  ●  What  framework  do  you  use  to  evaluate  build-order  tradeoffs  (e.g.,  impact  vs.  effort,  risk  
+reduction,
+ 
+volume,
+ 
+customer
+ 
+impact)?
+ ●  How  do  you  manage  teams  whose  needs  come  second  or  third  in  the  roadmap?  
+Adoption  Strategy  
+●  What  metrics  would  you  track  to  measure  whether  the  tooling  is  actually  working?  ●  How  do  you  build  feedback  loops  with  Ops  teams  to  iterate  quickly?  
+Scaling  &  Risk  
+●  What  are  the  top  3  risks  if  Félix  scales  to  10x  growth  &  a  multiproduct  environment  ●  How  do  you  design  permissions,  audit  trails,  and  compliance  guardrails  into  the  system  
+from
+ 
+day
+ 
+one?
+ ●  How  does  the  tooling  support  a  blended  workforce  (in-house  agents  +  BPO)?  
+ 
+
+
+===== PAGE 3 =====
+
+ Appendix  Context  &  Team  Tasks  
+Customer  Support  (CX)  
+●  Uses  a  CX  dashboard  to  manage  remittance  transactions,  refunds,  and  support  tickets.  ●  Can  see  transaction  status  but  not  the  reason  for  holds.  ●  Lacks  visibility  into  compliance,  fraud,  credit,  wallet  balance,  and  case  history.  ●  Relies  on  manual  outreach  to  other  teams  for  context.  
+Compliance  Operations  
+●  Uses  a  compliance  dashboard  and  KYC  third  party  tool  for  KYC  approvals  ●  Reviews  documents,  applies  regulatory  holds,  and  manages  audit  trails.  ●  Hold  reasons  and  required  user  actions  are  not  visible  to  CX.  ●  No  cross-tool  notifications  when  holds  are  placed  or  resolved.  ●  Triages  with  external  disbursement  providers  exchanging  transactional  information  
+Fraud  Operations  
+●  Uses  a  fraud  dashboard  and  third-party  risk  tools  to  investigate  flagged  transactions.  ●  Approves  or  blocks  transactions  within  fraud  systems  only.  ●  Fraud  decisions  are  not  visible  to  CX  or  Compliance.  
+Credit  Operations  
+●  Uses  spreadsheets  and  a  payment  platform  to  manage  loans  and  repayments.  ●  Loan  workflows  are  largely  manual.  ●  Credit  data  is  not  connected  to  remittance  activity  or  CX  tools.  
+Other  Teams  That  Need  Access  
+●  Product  
+ ○  Reviews  individual  user  journeys  to  understand  customer  experience.  ○  Investigates  bugs,  edge  cases,  and  pulls  qualitative  insights  from  real  user  data.  
+ ●  Growth  
+ ○  Applies  bulk  actions  to  user  cohorts  (appeasements,  promotions).  ○  Analyzes  user-level  data  for  retention,  activation,  and  conversion.  
+ 
